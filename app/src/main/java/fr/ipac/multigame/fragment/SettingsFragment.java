@@ -16,9 +16,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import fr.ipac.multigame.R;
+import fr.ipac.multigame.activity.ShowPlayerActivity;
 import fr.ipac.multigame.adapter.SettingsAdapter;
 import fr.ipac.multigame.manager.ProfileManager;
 import fr.ipac.multigame.model.Game;
+import fr.ipac.multigame.utils.ActivityUtils;
 
 public class SettingsFragment extends Fragment {
 
@@ -47,20 +49,18 @@ public class SettingsFragment extends Fragment {
 
         recyclerView.setAdapter(new SettingsAdapter(games));
 
-        //TODO: ajouter des couleurs en fonction du score
-        //recyclerView.setBackgroundColor(2);
-
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //ActivityUtils.launchActivity(ShowPlayerActivity, , );
+                //TODO: retourner a la page d'acceuil
             }
         });
 
         players.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO: retourner a la vue des players
+                //TODO: retourner a la selection du joueur
+                //ActivityUtils.launchActivity(new ShowPlayerActivity(),new Intent() , 1);
             }
         });
 
