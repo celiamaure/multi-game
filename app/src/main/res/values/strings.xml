@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">IpacGame</string>
+    <string name="validate">Valider</string>
+    <string name="more">C\'est plus !</string>
+    <string name="less">C\'est moins !</string>
+    <string name="hint_number">Nombre</string>
+    <string name="try_left">Il vous reste: %d essais</string>
+    <string name="won">Gagné</string>
+    <string name="replay">Relancer</string>
+    <string name="quit">Quitter</string>
+    <string name="well_done">Bravo !</string>
+    <string name="looser">Perdu !</string>
+    <string name="fast_tap_name">Fast Tap</string>
+    <string name="drag_n_drop_name">Drag and drop</string>
+    <string name="start">Commencer !</string>
+    <string name="fast_tap_instruction">%s</string>
+    <string name="time">Temps restant: %d</string>
+    <string name="score">Score: %d</string>
+    <string name="tap">Tap</string>
+    <string name="tap_long">Tape longue</string>
+    <string name="remaining_time">Temps restant : %d secondes</string>
+    <string name="finish_score">Votre score est de</string>
+    <string name="menu">Menu</string>
+    <string name="exit">Quitter</string>
+    <string name="right">Droite</string>
+    <string name="left">Gauche</string>
+    <string name="up">Haut</string>
+    <string name="down">Bas</string>
+    <string name="swipe_name">Swipe game</string>
+</resources>
