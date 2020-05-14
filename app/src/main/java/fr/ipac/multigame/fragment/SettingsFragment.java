@@ -1,5 +1,6 @@
 package fr.ipac.multigame.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,13 +44,16 @@ public class SettingsFragment extends Fragment {
         games.add(new Game("Fast tap", ProfileManager.getInstance().getPlayer().getScores().get(2)));
         games.add(new Game("Ipac Game", ProfileManager.getInstance().getPlayer().getScores().get(3)));
 
+
         recyclerView.setAdapter(new SettingsAdapter(games));
 
+        //TODO: ajouter des couleurs en fonction du score
+        //recyclerView.setBackgroundColor(2);
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO: retourner au menu
+                //ActivityUtils.launchActivity(ShowPlayerActivity, , );
             }
         });
 
