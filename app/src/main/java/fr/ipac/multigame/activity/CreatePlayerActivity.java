@@ -26,6 +26,7 @@ import androidx.core.app.ActivityCompat;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import fr.ipac.multigame.R;
 import fr.ipac.multigame.model.Player;
@@ -47,6 +48,8 @@ public class CreatePlayerActivity extends AppCompatActivity {
     private Button players;
     private Button validate;
     private ImageView image;
+
+    private ArrayList<Integer> scores;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,9 +83,13 @@ public class CreatePlayerActivity extends AppCompatActivity {
                 if (userLocalisation == null) {
                     userLocalisation = localization.getText().toString();
                 }
+                scores.add(0);
+                scores.add(0);
+                scores.add(0);
+                scores.add(0);
 
                 if (!name.getText().toString().isEmpty() && !first_name.getText().toString().isEmpty() && !age.getText().toString().isEmpty() && imageUrl != null) {
-                    Player player = new Player(name.getText().toString(), first_name.getText().toString(), age.getText().toString(), imageUrl, userLocalisation);
+                    Player player = new Player(name.getText().toString(), first_name.getText().toString(), age.getText().toString(), imageUrl, userLocalisation, scores);
 
                     Intent intent = new Intent(CreatePlayerActivity.this, MainActivity.class);
                     startActivity(intent);

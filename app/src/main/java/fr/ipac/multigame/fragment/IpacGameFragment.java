@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 
 import fr.ipac.multigame.R;
 import fr.ipac.multigame.activity.FinishActivity;
+import fr.ipac.multigame.manager.ProfileManager;
 
 public class IpacGameFragment extends Fragment {
 
@@ -57,6 +58,11 @@ public class IpacGameFragment extends Fragment {
                     if (Integer.valueOf(input) > numberToFind) {
                         moreOrLess.setText(R.string.less);
                     } else if(Integer.valueOf(input) == numberToFind) {
+                        if (ProfileManager.getInstance().getPlayer().getScores().get(3) < numberOfTryLeft ) {
+
+                            ProfileManager.getInstance().getPlayer().getScores().set(3, numberOfTryLeft);
+
+                        }
                         FinishActivity.newInstance(getActivity(), getString(R.string.ipac_game), numberOfTryLeft);
                     } else {
                         moreOrLess.setText(R.string.more);

@@ -16,11 +16,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import java.lang.reflect.Array;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import fr.ipac.multigame.R;
 import fr.ipac.multigame.activity.FinishActivity;
+import fr.ipac.multigame.manager.ProfileManager;
 
 public class DragnDropFragment extends Fragment {
 
@@ -81,6 +83,9 @@ public class DragnDropFragment extends Fragment {
                         timeLeft--;
                         if (timeLeft == 0) {
                             timer.cancel();
+                            if (ProfileManager.getInstance().getPlayer().getScores().get(0) < score ) {
+                                ProfileManager.getInstance().getPlayer().getScores().set(0, score);
+                            }
                             FinishActivity.newInstance(getActivity(), getString(R.string.drag_n_drop_name), score);
                             getFragmentManager().popBackStack();
                         } else {

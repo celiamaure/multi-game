@@ -18,6 +18,7 @@ import java.util.TimerTask;
 
 import fr.ipac.multigame.R;
 import fr.ipac.multigame.activity.FinishActivity;
+import fr.ipac.multigame.manager.ProfileManager;
 
 public class TapOrSwipeGameFragment extends Fragment {
 
@@ -69,6 +70,17 @@ public class TapOrSwipeGameFragment extends Fragment {
                         timeLeft--;
                         if (timeLeft == 0) {
                             timer.cancel();
+
+                            if (isTapGame) {
+                                if (ProfileManager.getInstance().getPlayer().getScores().get(2) < score ) {
+                                    ProfileManager.getInstance().getPlayer().getScores().set(2, score);
+                                }
+                            } else {
+                                if (ProfileManager.getInstance().getPlayer().getScores().get(1) < score ) {
+                                    ProfileManager.getInstance().getPlayer().getScores().set(1, score);
+                                }
+                            }
+
                             FinishActivity.newInstance(getActivity(), getString(R.string.fast_tap_name), score);
                             getFragmentManager().popBackStack();
                         } else {

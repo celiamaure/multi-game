@@ -1,8 +1,6 @@
 package fr.ipac.multigame.activity;
 
 import android.os.Bundle;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -17,6 +15,7 @@ import fr.ipac.multigame.model.Player;
 public class ShowPlayerActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
+    private ArrayList<Integer> scores;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,11 +23,15 @@ public class ShowPlayerActivity extends AppCompatActivity {
         setContentView(R.layout.show_player_activity);
         recyclerView = findViewById(R.id.display_player_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        scores = new ArrayList<>();
+        scores.add(0);
+        scores.add(0);
+        scores.add(0);
+        scores.add(0);
         ArrayList<Player> players = new ArrayList<>();
         for (int i = 0; i < 200; i++){
-            players.add(new Player("Vaudey " + i, "Baptiste", "12", "o", "loc"));
+            players.add(new Player("Vaudey " + i, "Baptiste", "12", "o", "loc", scores));
         }
         recyclerView.setAdapter(new PlayerAdapter(this, players));
-
     }
 }

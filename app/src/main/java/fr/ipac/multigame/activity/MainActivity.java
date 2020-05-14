@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     case 2:
                         return "Fast\nTap";
                     case 3:
-                        return "Ipac\nGame";
+                        return "Ipac\nGameManager";
                     case 4:
                         return "Setting";
                     default:
