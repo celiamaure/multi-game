@@ -13,6 +13,7 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 
 import fr.ipac.multigame.R;
+import fr.ipac.multigame.fragment.DragNDropHomeFragment;
 import fr.ipac.multigame.fragment.DragnDropFragment;
 import fr.ipac.multigame.fragment.TapOrSwipeFragment;
 import fr.ipac.multigame.fragment.IpacGameFragment;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         final ArrayList<Fragment> fragments = new ArrayList<>();
 
-        fragments.add(new DragnDropFragment());
+        fragments.add(new DragNDropHomeFragment());
         fragments.add(TapOrSwipeFragment.newInstance(false));
         fragments.add(TapOrSwipeFragment.newInstance(true));
         fragments.add(new IpacGameFragment());

@@ -69,7 +69,6 @@ public class DragnDropFragment extends Fragment {
         time = view.findViewById(R.id.drag_time);
 
         // Time handling
-        //TODO: au relancement d'une partie, le timer ne se remet pas a 0...
         time.setText(getString(R.string.remaining_time, timeLeft));
         final Handler handler = new Handler();
         timer = new Timer();
